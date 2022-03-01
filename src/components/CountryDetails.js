@@ -49,12 +49,12 @@ const CountryDetails = () => {
                 <span className="values"> Test</span>
               </p>
               <p>
-                Lnguages:{""}
+                Languages:{""}
                 <span className="values"> Test</span>
               </p>
             </div>
           </div>
-          Border Countries:
+          Border Countries: <br />
           <div className="border-country">
             <p>Test</p>
           </div>
