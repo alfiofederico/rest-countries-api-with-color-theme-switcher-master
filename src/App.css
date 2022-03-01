@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+
+:root {
+--DarkBlue : hsl(209, 23%, 22%) ; /* (Dark Mode Elements) */
+--VeryDarkBlue : hsl(207, 26%, 17%); /* (Dark Mode Background) */
+--VeryDarkBlue : hsl(200, 15%, 8%); /* (Light Mode Text) */
+--DarkGray : hsl(0, 0%, 52%); /* (Light Mode Input) */
+--VeryLightGray : hsl(0, 0%, 98%); /* (Light Mode Background) */
+--White: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements) */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background: var(--VeryLightGray);
+  min-height: 100vh;
+  height: 100%;
+}
+
+.main-body {
+  margin: 15px auto 0;
+  padding: 15px;
+  max-width: 1400px;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--VeryLightGray);
+}
+
+.header {
+  padding:  15px;
+  background: var(--White);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.switch-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input{
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--White);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  width: 350px;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+.search-input input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+}
+
+.filter-region {
+  width: 200px;
+  background-color: var(--White);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  border-radius: 5px;
+  
+}
+
+.filter-region select {
+  width: 100%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.countries {
+  max-width: 1400px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.country {
+  background: var(--White);
+  width: 305px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 370px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.country .flag-conteiner{
+  height: 170px;
+  width: 100%;
+}
+
+.country .flag-conteiner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country .name {
+  margin-bottom: 10px;
+  color: var(--VeryDarkBlue);
+}
+
+.country .values {
+  color: var(--DarkGray);
+}
+
+.country .details {
+  padding: 15px;
+}
+
+.country .details p {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.country .details h3 {
+  font-weight: 800;
+}
+
