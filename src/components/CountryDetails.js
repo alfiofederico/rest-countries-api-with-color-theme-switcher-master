@@ -1,10 +1,10 @@
 import React from 'react'
 import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
 
-const CountryDetails = () => {
+const CountryDetails = ({darkMode}) => {
   return (
     <div className="country-details">
-      <button className="back">
+      <button className={`back ${darkMode ? "darkMode" : ""}`}>
         <ArrowBackTwoToneIcon />
         <p>Back</p>
       </button>
@@ -20,48 +20,72 @@ const CountryDetails = () => {
             <div className="left-info">
               <p>
                 Native Name:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
               <p>
                 Population:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
               <p>
                 Region:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
               <p>
                 Sub Region:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
               <p>
                 Capital:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
             </div>
             <div className="right-info">
               <p>
                 Top Level Domain:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
               <p>
                 Currencies:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
               <p>
                 Languages:{""}
-                <span className="values"> Test</span>
+                <span className={`values ${darkMode ? "darkMode" : ""}`}>
+                  {" "}
+                  Test
+                </span>
               </p>
             </div>
           </div>
           Border Countries: <br />
-          <div className="border-country">
+          <div className={`border-country ${darkMode ? "darkMode" : ""}`}>
             <p>Test</p>
           </div>
-          <div className="border-country">
+          <div className={`border-country ${darkMode ? "darkMode" : ""}`}>
             <p>Test</p>
           </div>
-          <div className="border-country">
+          <div className={`border-country ${darkMode ? "darkMode" : ""}`}>
             <p>Test</p>
           </div>
         </div>

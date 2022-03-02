@@ -16,15 +16,17 @@
   box-sizing: border-box;
 }
 
-.App {
+.app {
   background: var(--VeryLightGray);
   min-height: 100vh;
   height: 100%;
 }
 
-.app.dark-mode{
+.app.darkMode{
   background-color: var(--VeryDarkBlue);
   color: var(--White);
+    min-height: 100vh;
+  height: 100%;
 }
 
 .main-body {
@@ -86,14 +88,19 @@ body {
   gap: 5px;
 }
 
+
+.search-input.darkMode {
+  background-color: var(--DarkBlue);
+  color: var(--White);
+}
 .search-input.darkMode input{
   color: var(--White);
 }
 
-.search-input.darkMode input::placeholder {
-  
-color: var(--White);
+.search-input.darkMode input::placeholder{
+  color: white;
 }
+
 
 .search-input input {
   border: none;
@@ -252,6 +259,10 @@ color: var(--White);
   color: var(--White);
 }
 
+.name.darkMode {
+  color: var(--White);
+}
+
 .info-container {
   margin-bottom: 45px;
   display: flex;
@@ -270,7 +281,7 @@ color: var(--White);
 }
 
 .info .values.darkMode {
-  color: var(--DarkGray);
+  color: var(--White);
 } 
 .border-country {
   padding: 5px 10px;
