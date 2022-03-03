@@ -1,8 +1,14 @@
 import React from 'react'
 
-const Country = ({darkMode, population, flag, capital, name, region}) => {
+const Country = ({darkMode, population, flag, capital, name, region, showDetails, code}) => {
+
+
+  const showDetailsHandler = () => {
+    showDetails(code)
+  }
+
   return (
-    <div className={`country ${darkMode ? "darkMode" : ""}`}>
+    <div className={`country ${darkMode ? "darkMode" : ""}`}onClick={showDetailsHandler}>
       <div className="flag-container">
         <img src={flag} alt="Flags" />
       </div>

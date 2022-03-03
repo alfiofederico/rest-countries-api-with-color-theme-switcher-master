@@ -2,9 +2,10 @@ import Header from "./components/Header";
 import "./App.css";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import Country from "./components/Country";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import CountryDetails from "./components/CountryDetails";
 import { useState, useEffect, useRef } from 'react';
+
 
 function App() {
  const [darkMode, setDarkMode] = useState(false);
@@ -13,6 +14,7 @@ function App() {
 
  const countriesInputRef =useRef()
  const regionRef = useRef()
+ const navigate = useNavigate()
 
  const noResults = countries.status || countries.message
 
@@ -94,7 +96,7 @@ const selectRegion = () => {
 }
 
 const showDetails = (code) => {
-  
+  navigate(`/${code}`)
 }
   return (
     <div className={`app ${darkMode ? "darkMode" : ""}`}>
@@ -108,7 +110,12 @@ const showDetails = (code) => {
               <div className="inputs">
                 <div className={`search-input ${darkMode ? "darkMode" : ""}`}>
                   <SearchTwoToneIcon />
-                  <input type="text" placeholder="Search for a country..." ref={countriesInputRef} onChange={searchCountries}/>
+                  <input
+                    type="text"
+                    placeholder="Search for a country..."
+                    ref={countriesInputRef}
+                    onChange={searchCountries}
+                  />
                 </div>
                 <div className={`filter-region ${darkMode ? "darkMode" : ""}`}>
                   <select ref={regionRef} onChange={selectRegion}>
@@ -123,19 +130,21 @@ const showDetails = (code) => {
               </div>
 
               <div className="countries">
-                {!noResults ? (countries.map((country) => (
-                  <Country
-                    darkMode={darkMode}
-                    key={country.cca3}
-                    code={country.cca3}
-                    name= {country.name}
-                    capital = {country.capital}
-                    population = {country.population}
-                    region = {country.region}
-                    flag= {country.flag}
-                    showDetails = { showDetails }
-                  />
-                ))) : (
+                {!noResults ? (
+                  countries.map((country) => (
+                    <Country
+                      darkMode={darkMode}
+                      key={country.alpha3Code}
+                      code={country.alpha3Code}
+                      name={country.name}
+                      capital={country.capital}
+                      population={country.population}
+                      region={country.region}
+                      flag={country.flag}
+                      showDetails={showDetails}
+                    />
+                  ))
+                ) : (
                   <p>No countries found</p>
                 )}
               </div>
@@ -143,8 +152,8 @@ const showDetails = (code) => {
           }
         />
         <Route
-          path="country-details"
-          element={<CountryDetails darkMode={darkMode} />}
+          path="/:countryCode"
+          element={<CountryDetails darkMode={darkMode} countries={countries} refetch={fetchData} />}
         />
       </Routes>
     </div>
